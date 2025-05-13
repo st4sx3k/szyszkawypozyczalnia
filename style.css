@@ -1,0 +1,481 @@
+/* Resetowanie marginesów i paddingów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header zawiera logo i nawigację */
+header {
+    display: flex;
+    justify-content: space-between; /* Wyśrodkowanie nawigacji w headerze */
+    align-items: center; /* Wyśrodkowanie w pionie */
+    padding: 20px;
+    background-color: #ffffff;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Cień wychodzący na maina */
+    z-index: 1; /* Upewniamy się, że header ma wyższy priorytet nad main */
+    position: relative; /* Umożliwia dodanie cienia bez wpływu na layout */
+    position: fixed;
+    flex-wrap: wrap;
+}
+/*ukrycie loga na telefonie*/
+@media (max-width: 768px) {
+  .logo {
+    display: none;
+  }
+}
+
+/* Logo po lewej stronie */
+header .logo {
+    position: absolute;
+    left: 20px; /* Odstęp od lewej krawędzi */
+}
+
+header .logo img {
+    height: 130px; /* Możesz dostosować wysokość logo */
+    width: auto;
+}
+
+/* Menu nawigacyjne wyśrodkowane */
+nav {
+    flex-grow: 1; /* Menu zajmuje całą przestrzeń, aby je wyśrodkować */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Wyśrodkowanie menu */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 20px;
+}
+
+nav ul li a:hover {
+    background-color: #ffd900;
+    border-radius: 5px;
+}
+
+main {
+    background-color: white;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+.main img {
+    display: block;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    margin-top: 80px;
+}
+
+.main {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*zdjecia 3 pod nasza oferta*/
+h1 {
+    text-align: center;
+    padding: 30px 0 20px;
+    font-size: 2.5em;
+    color: #333;
+  }
+
+  .oferta {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .oferta-item {
+    width: 400px;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+  }
+
+  .oferta-item img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    display: block;
+  }
+
+  .oferta-item:hover img {
+    transform: scale(1.1);
+  }
+
+  .oferta-item p {
+    text-align: center;
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 30px;
+    color: #333;
+  }
+.linia {
+    background-color: #ffd900;
+    height: 110px;
+}
+
+/*stopka*/
+.footer {
+    background-color: #ffd900;
+    color: white;
+    padding: 60px 20px 30px;
+    position: relative;
+    text-align: center;
+  }
+
+  .footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: white;
+    border-bottom-left-radius: 50% 60px;
+    border-bottom-right-radius: 50% 60px;
+    z-index: 1;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .footer-box {
+    flex: 1;
+    min-width: 200px;
+    padding: 20px;
+  }
+
+  .info-box {
+    background: white;
+    color: #333;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .info-box img {
+    width: 30px;
+    margin-right: 10px;
+  }
+
+  .logo1 img {
+    height: 100px;
+  }
+
+  h4 {
+    margin-bottom: 5px;
+    font-size: 22px;
+    color: #333;
+  }
+
+  small {
+    display: block;
+    margin-top: 5px;
+    color: #333;
+    font-size: 20px;
+  }
+
+  .social-icon img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .social-icon img:hover {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+  }
+
+  /*oferta*/
+  .offerts {
+    display: block;
+  }
+
+  .mapa {
+    margin-bottom: 15px;
+  }
+
+/* do oferty kafelki */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  max-width: 1400px;
+  margin: auto;
+  gap: 20px;
+  padding: 20px;
+}
+
+.tile {
+  position: relative;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.tile:hover {
+  transform: scale(1.03);
+}
+
+.overlay {
+  width: 100%;
+  background: linear-gradient(to top, #ffd900, #fceabb);
+  color: #333;
+  padding: 10px;
+  text-align: center;
+}
+
+.category {
+  margin: 0;
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+h2 {
+  margin: 5px 0 0;
+  font-size: 1.2em;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+@media (min-width: 992px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr); /*tutaj mamy ile chcemy miec obok siebie kafelek */
+  }
+}
+
+/*opis szczegolowy*/
+.container1 {
+  max-width: 1400px;
+  margin: 0px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.tytulpodstrony {
+  color: #333;
+  margin-top: 60px;
+}
+
+.flex {
+  display: flex;
+  gap: 1px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.images img {
+  width: 100%;
+  max-width: 410px;
+  border-radius: 8px;
+  margin-top: 30px;
+  
+}
+
+table {
+  width: 70%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+th {
+  background-color: #ffd900;
+  color: #333;
+  text-align: left;
+  font-size: 18px;
+}
+
+p {
+  text-align: center;
+  font-size: 20px;
+}
+
+.zestaw {
+  margin-bottom: 40px;
+  font-size: 22px;
+}
+
+/*powrot*/
+.powrot {
+  position: fixed;
+  background-color: #333;
+  padding: 12px 24px;
+  display: inline-block;
+  margin-top: 120px;
+  margin-left: 20px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.powrot1 {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+
+/*mapa */
+.mapa iframe {
+  border: 0;
+  border-radius: 15px;
+  max-width: 100%;
+}
+
+.mapa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*tabela2*/
+.ramka table {
+  width: 70%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+.ramka th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+.ramka th {
+  background-color: #333;
+  color: #ffd900;
+  text-align: left;
+  font-size: 18px;
+}
+
+.bulawy {
+  margin: 0 auto;
+  justify-content: center;
+}
+
+/*kontakt*/
+.contact-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 110px;
+  height: 100%;
+}
+
+.contact-header h2 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.contact-header h1 {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-size: 26px;
+  background-color: #ffd900;
+  padding: 8px 12px;
+  border-radius: 12px;
+}
+
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.contact-item {
+  flex: 1 1 300px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.contact-info a {
+  color: #333;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 26px;
+  background-color: #ffd90090;
+  padding: 8px 12px;
+  border-radius: 12px;
+}
+
+
+.hours p {
+  margin: 0;
+  line-height: 1.6;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .nav-center {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-center li {
+    width: 100%;
+    text-align: center;
+  }
+}
